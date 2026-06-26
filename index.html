@@ -148,386 +148,457 @@
         <h2>Research Mentorship</h2>
 
         <style>
-          .mentorship-timeline {
-            position: relative;
-            margin-top: 14px;
-            padding-left: 28px;
+          .ment-wrap {
+            margin-top: 12px;
+            border: 1px solid #e5e7eb;
+            border-radius: 16px;
+            background: #fff;
+            padding: 16px;
+            overflow-x: auto;
           }
 
-          .mentorship-timeline::before {
-            content: "";
-            position: absolute;
-            left: 10px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: #e5e7eb;
-          }
-
-          .mentorship-item {
-            position: relative;
-            margin: 0 0 18px 0;
-          }
-
-          .mentorship-dot {
-            position: absolute;
-            left: -3px;
-            top: 16px;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: #111827;
-            border: 4px solid #ffffff;
-            box-shadow: 0 0 0 1px #e5e7eb;
-          }
-
-          .mentorship-card {
+          .ment-detail {
             border: 1px solid #e5e7eb;
             border-radius: 14px;
             background: #fafafa;
             padding: 14px 16px;
+            margin-bottom: 14px;
+            color: #111827;
           }
 
-          .mentorship-period {
-            font-weight: 700;
-            font-size: 1.02rem;
-            margin-bottom: 10px;
-          }
-
-          .mentorship-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 12px 18px;
-          }
-
-          .mentorship-role {
-            font-weight: 600;
+          .ment-detail .label {
+            color: #6b7280;
+            font-size: 0.92rem;
             margin-bottom: 4px;
           }
 
-          .mentorship-names {
-            color: #374151;
-            line-height: 1.55;
+          .ment-axis {
+            position: relative;
+            height: 34px;
+            min-width: 1100px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #e5e7eb;
           }
 
-          .mentorship-names span {
+          .ment-axis .tick {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: #e5e7eb;
+          }
+
+          .ment-axis .tick span {
+            position: absolute;
+            top: 10px;
+            left: 4px;
+            transform: translateX(-50%);
+            font-size: 0.82rem;
+            color: #6b7280;
             white-space: nowrap;
           }
 
-          @media (max-width: 700px) {
-            .mentorship-timeline {
-              padding-left: 24px;
-            }
+          .ment-group {
+            min-width: 1100px;
+            margin-bottom: 22px;
+          }
 
-            .mentorship-dot {
-              left: -5px;
+          .ment-group-title {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin-bottom: 8px;
+          }
+
+          .ment-group-title h3 {
+            margin: 0;
+            font-size: 1.02rem;
+          }
+
+          .ment-group-title .sub {
+            color: #6b7280;
+            font-size: 0.92rem;
+          }
+
+          .ment-track {
+            position: relative;
+            border-left: 2px solid #f3f4f6;
+            margin-left: 8px;
+          }
+
+          .ment-lane {
+            position: relative;
+            height: 42px;
+          }
+
+          .ment-bar {
+            position: absolute;
+            height: 28px;
+            top: 7px;
+            border-radius: 999px;
+            border: 1px solid rgba(17, 24, 39, 0.12);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+            padding: 0 12px;
+            display: flex;
+            align-items: center;
+            font-size: 0.86rem;
+            line-height: 1;
+            cursor: pointer;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s ease;
+          }
+
+          .ment-bar:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            opacity: 0.98;
+          }
+
+          .ment-bar.active {
+            outline: 2px solid #111827;
+            outline-offset: 2px;
+          }
+
+          .ment-bar.undergrad {
+            background: linear-gradient(90deg, #dbeafe, #eff6ff);
+            color: #1e3a8a;
+          }
+
+          .ment-bar.masters {
+            background: linear-gradient(90deg, #dcfce7, #f0fdf4);
+            color: #14532d;
+          }
+
+          .ment-bar .small {
+            font-size: 0.78rem;
+            opacity: 0.82;
+            margin-left: 8px;
+          }
+
+          .ment-note {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin-top: 8px;
+          }
+
+          @media (max-width: 720px) {
+            .ment-wrap,
+            .ment-axis,
+            .ment-group {
+              min-width: 980px;
             }
           }
         </style>
 
-        <div class="mentorship-timeline">
-
-          <div class="mentorship-item">
-            <div class="mentorship-dot"></div>
-            <div class="mentorship-card">
-              <div class="mentorship-period">Summer 2025 – Current</div>
-              <div class="mentorship-grid">
-                <div>
-                  <div class="mentorship-role">Undergraduate Students</div>
-                  <div class="mentorship-names">
-                    Charlie Wang<br>
-                    Angela O’Toole<br>
-                    Stephanie Zhou<br>
-                    Kelly Cai<br>
-                    Kevin Hao<br>
-                    Daniel Song
-                  </div>
-                </div>
-                <div>
-                  <div class="mentorship-role">Master's Students</div>
-                  <div class="mentorship-names">
-                    Anthony Zhang<br>
-                    Gaurav Zanpure<br>
-                    Meiying Li<br>
-                    Riley Fang
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div class="ment-wrap">
+          <div class="ment-detail" id="ment-detail">
+            <div class="label">Timeline detail</div>
+            <div>Click any bar to see the full mentee group and dates.</div>
           </div>
 
-          <div class="mentorship-item">
-            <div class="mentorship-dot"></div>
-            <div class="mentorship-card">
-              <div class="mentorship-period">Fall 2024 – Current</div>
-              <div class="mentorship-grid">
-                <div>
-                  <div class="mentorship-role">Undergraduate Students</div>
-                  <div class="mentorship-names">
-                    Vincent Zhang<br>
-                    Nairi Zeytounzian<br>
-                    Mingyu Huang<br>
-                    Justin Yang<br>
-                    Henry Chen<br>
-                    Zoe Zang
-                  </div>
-                </div>
-                <div>
-                  <div class="mentorship-role">Master's Students</div>
-                  <div class="mentorship-names">
-                    Jiong Wang
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div class="ment-axis" id="ment-axis"></div>
+          <div id="ment-groups"></div>
 
-          <div class="mentorship-item">
-            <div class="mentorship-dot"></div>
-            <div class="mentorship-card">
-              <div class="mentorship-period">Fall 2024 – Spring 2025</div>
-              <div class="mentorship-grid">
-                <div>
-                  <div class="mentorship-role">Undergraduate Students</div>
-                  <div class="mentorship-names">
-                    Fatima Flores<br>
-                    Isabella Assefa<br>
-                    Lexie Zhang<br>
-                    Nicole Yu
-                  </div>
-                </div>
-                <div>
-                  <div class="mentorship-role">Master's Students</div>
-                  <div class="mentorship-names">
-                    Yash Sahitya
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="ment-note">
+            Hover a bar to preview; click to pin details.
           </div>
-
-          <div class="mentorship-item">
-            <div class="mentorship-dot"></div>
-            <div class="mentorship-card">
-              <div class="mentorship-period">Fall 2024 – Fall 2024</div>
-              <div class="mentorship-grid">
-                <div>
-                  <div class="mentorship-role">Undergraduate Students</div>
-                  <div class="mentorship-names">
-                    Meredith Li<br>
-                    Yirui Song
-                  </div>
-                </div>
-                <div>
-                  <div class="mentorship-role">Master's Students</div>
-                  <div class="mentorship-names">
-                    —
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="mentorship-item">
-            <div class="mentorship-dot"></div>
-            <div class="mentorship-card">
-              <div class="mentorship-period">Spring 2025 – Spring 2025</div>
-              <div class="mentorship-grid">
-                <div>
-                  <div class="mentorship-role">Undergraduate Students</div>
-                  <div class="mentorship-names">
-                    —
-                  </div>
-                </div>
-                <div>
-                  <div class="mentorship-role">Master's Students</div>
-                  <div class="mentorship-names">
-                    Sherwin Sathish
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="mentorship-item">
-            <div class="mentorship-dot"></div>
-            <div class="mentorship-card">
-              <div class="mentorship-period">Fall 2023 – Spring 2025</div>
-              <div class="mentorship-grid">
-                <div>
-                  <div class="mentorship-role">Undergraduate Students</div>
-                  <div class="mentorship-names">
-                    Ritika Singh
-                  </div>
-                </div>
-                <div>
-                  <div class="mentorship-role">Master's Students</div>
-                  <div class="mentorship-names">
-                    —
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="mentorship-item">
-            <div class="mentorship-dot"></div>
-            <div class="mentorship-card">
-              <div class="mentorship-period">Summer 2023 – Spring 2024</div>
-              <div class="mentorship-grid">
-                <div>
-                  <div class="mentorship-role">Undergraduate Students</div>
-                  <div class="mentorship-names">
-                    Jessica Wang<br>
-                    Xiaoyuan Zhu<br>
-                    Jonathan Ong<br>
-                    Aryan Trehan<br>
-                    Gloria Chang
-                  </div>
-                </div>
-                <div>
-                  <div class="mentorship-role">Master's Students</div>
-                  <div class="mentorship-names">
-                    —
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="mentorship-item">
-            <div class="mentorship-dot"></div>
-            <div class="mentorship-card">
-              <div class="mentorship-period">Spring 2023 – Fall 2024</div>
-              <div class="mentorship-grid">
-                <div>
-                  <div class="mentorship-role">Undergraduate Students</div>
-                  <div class="mentorship-names">
-                    —
-                  </div>
-                </div>
-                <div>
-                  <div class="mentorship-role">Master's Students</div>
-                  <div class="mentorship-names">
-                    Abhyuday Singh
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="mentorship-item">
-            <div class="mentorship-dot"></div>
-            <div class="mentorship-card">
-              <div class="mentorship-period">Spring 2023 – Spring 2024</div>
-              <div class="mentorship-grid">
-                <div>
-                  <div class="mentorship-role">Undergraduate Students</div>
-                  <div class="mentorship-names">
-                    Autumn Zaretsky<br>
-                    Parini Gandhi<br>
-                    Wallace Browning<br>
-                    Misha Arif Faruki
-                  </div>
-                </div>
-                <div>
-                  <div class="mentorship-role">Master's Students</div>
-                  <div class="mentorship-names">
-                    —
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="mentorship-item">
-            <div class="mentorship-dot"></div>
-            <div class="mentorship-card">
-              <div class="mentorship-period">Spring 2023 – Spring 2023</div>
-              <div class="mentorship-grid">
-                <div>
-                  <div class="mentorship-role">Undergraduate Students</div>
-                  <div class="mentorship-names">
-                    Andrew Park<br>
-                    Zain Merchant<br>
-                    Diego Arceo-Peregrino
-                  </div>
-                </div>
-                <div>
-                  <div class="mentorship-role">Master's Students</div>
-                  <div class="mentorship-names">
-                    —
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="mentorship-item">
-            <div class="mentorship-dot"></div>
-            <div class="mentorship-card">
-              <div class="mentorship-period">Fall 2022 – Spring 2023</div>
-              <div class="mentorship-grid">
-                <div>
-                  <div class="mentorship-role">Undergraduate Students</div>
-                  <div class="mentorship-names">
-                    Lin She Spring<br>
-                    Shriya Upadhyay
-                  </div>
-                </div>
-                <div>
-                  <div class="mentorship-role">Master's Students</div>
-                  <div class="mentorship-names">
-                    Yang Qian
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="mentorship-item">
-            <div class="mentorship-dot"></div>
-            <div class="mentorship-card">
-              <div class="mentorship-period">Fall 2021 – Fall 2023</div>
-              <div class="mentorship-grid">
-                <div>
-                  <div class="mentorship-role">Undergraduate Students</div>
-                  <div class="mentorship-names">
-                    Anika Gupta
-                  </div>
-                </div>
-                <div>
-                  <div class="mentorship-role">Master's Students</div>
-                  <div class="mentorship-names">
-                    —
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="mentorship-item">
-            <div class="mentorship-dot"></div>
-            <div class="mentorship-card">
-              <div class="mentorship-period">Fall 2021 – Spring 2024</div>
-              <div class="mentorship-grid">
-                <div>
-                  <div class="mentorship-role">Undergraduate Students</div>
-                  <div class="mentorship-names">
-                    Pau Sang
-                  </div>
-                </div>
-                <div>
-                  <div class="mentorship-role">Master's Students</div>
-                  <div class="mentorship-names">
-                    —
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
+
+        <script>
+          (function () {
+            const timelineStart = new Date("2021-07-01T00:00:00");
+            const timelineEnd = new Date(); // current date
+
+            const data = [
+              {
+                group: "Undergraduate Students",
+                type: "undergrad",
+                start: "2025-06-01",
+                end: null,
+                label: "Summer 2025 – Current",
+                names: ["Charlie Wang", "Angela O’Toole", "Stephanie Zhou", "Kelly Cai", "Kevin Hao", "Daniel Song"]
+              },
+              {
+                group: "Master's Students",
+                type: "masters",
+                start: "2025-06-01",
+                end: null,
+                label: "Summer 2025 – Current",
+                names: ["Anthony Zhang", "Gaurav Zanpure", "Meiying Li", "Riley Fang"]
+              },
+              {
+                group: "Undergraduate Students",
+                type: "undergrad",
+                start: "2024-09-01",
+                end: null,
+                label: "Fall 2024 – Current",
+                names: ["Vincent Zhang", "Nairi Zeytounzian", "Mingyu Huang", "Justin Yang", "Henry Chen", "Zoe Zang"]
+              },
+              {
+                group: "Master's Students",
+                type: "masters",
+                start: "2024-09-01",
+                end: null,
+                label: "Fall 2024 – Current",
+                names: ["Jiong Wang"]
+              },
+              {
+                group: "Undergraduate Students",
+                type: "undergrad",
+                start: "2024-09-01",
+                end: "2025-05-31",
+                label: "Fall 2024 – Spring 2025",
+                names: ["Fatima Flores", "Isabella Assefa", "Lexie Zhang", "Nicole Yu"]
+              },
+              {
+                group: "Master's Students",
+                type: "masters",
+                start: "2024-09-01",
+                end: "2025-05-31",
+                label: "Fall 2024 – Spring 2025",
+                names: ["Yash Sahitya"]
+              },
+              {
+                group: "Undergraduate Students",
+                type: "undergrad",
+                start: "2024-09-01",
+                end: "2024-12-15",
+                label: "Fall 2024 – Fall 2024",
+                names: ["Meredith Li", "Yirui Song"]
+              },
+              {
+                group: "Master's Students",
+                type: "masters",
+                start: "2025-01-01",
+                end: "2025-05-31",
+                label: "Spring 2025 – Spring 2025",
+                names: ["Sherwin Sathish"]
+              },
+              {
+                group: "Undergraduate Students",
+                type: "undergrad",
+                start: "2023-09-01",
+                end: "2025-05-31",
+                label: "Fall 2023 – Spring 2025",
+                names: ["Ritika Singh"]
+              },
+              {
+                group: "Undergraduate Students",
+                type: "undergrad",
+                start: "2023-06-01",
+                end: "2024-05-31",
+                label: "Summer 2023 – Spring 2024",
+                names: ["Jessica Wang", "Xiaoyuan Zhu", "Jonathan Ong", "Aryan Trehan", "Gloria Chang"]
+              },
+              {
+                group: "Master's Students",
+                type: "masters",
+                start: "2023-01-01",
+                end: "2024-12-15",
+                label: "Spring 2023 – Fall 2024",
+                names: ["Abhyuday Singh"]
+              },
+              {
+                group: "Undergraduate Students",
+                type: "undergrad",
+                start: "2023-09-01",
+                end: "2024-05-31",
+                label: "Fall 2023 – Spring 2024",
+                names: ["Autumn Zaretsky", "Parini Gandhi"]
+              },
+              {
+                group: "Undergraduate Students",
+                type: "undergrad",
+                start: "2022-09-01",
+                end: "2023-05-31",
+                label: "Fall 2022 – Spring 2023",
+                names: ["Lin She Spring"]
+              },
+              {
+                group: "Undergraduate Students",
+                type: "undergrad",
+                start: "2023-01-01",
+                end: "2023-05-31",
+                label: "Spring 2023 – Spring 2023",
+                names: ["Andrew Park", "Zain Merchant", "Diego Arceo-Peregrino"]
+              },
+              {
+                group: "Undergraduate Students",
+                type: "undergrad",
+                start: "2023-01-01",
+                end: "2024-05-31",
+                label: "Spring 2023 – Spring 2024",
+                names: ["Wallace Browning", "Misha Arif Faruki"]
+              },
+              {
+                group: "Undergraduate Students",
+                type: "undergrad",
+                start: "2022-09-01",
+                end: null,
+                label: "Fall 2022 – Current",
+                names: ["Shriya Upadhyay"]
+              },
+              {
+                group: "Master's Students",
+                type: "masters",
+                start: "2022-09-01",
+                end: "2023-05-31",
+                label: "Fall 2022 – Spring 2023",
+                names: ["Yang Qian"]
+              },
+              {
+                group: "Undergraduate Students",
+                type: "undergrad",
+                start: "2021-09-01",
+                end: "2023-12-31",
+                label: "Fall 2021 – Fall 2023",
+                names: ["Anika Gupta"]
+              },
+              {
+                group: "Undergraduate Students",
+                type: "undergrad",
+                start: "2021-09-01",
+                end: "2024-05-31",
+                label: "Fall 2021 – Spring 2024",
+                names: ["Pau Sang"]
+              }
+            ];
+
+            const colors = {
+              undergrad: { fill: "#dbeafe", text: "#1e3a8a" },
+              masters: { fill: "#dcfce7", text: "#14532d" }
+            };
+
+            function d(s) {
+              return new Date(s);
+            }
+
+            function endDate(item) {
+              return item.end ? d(item.end) : timelineEnd;
+            }
+
+            function scale(date) {
+              const x = (date - timelineStart) / (timelineEnd - timelineStart);
+              return Math.max(0, Math.min(1, x));
+            }
+
+            function assignLanes(items) {
+              const sorted = [...items].sort((a, b) => d(a.start) - d(b.start));
+              const lanes = [];
+              const placed = [];
+
+              sorted.forEach((item) => {
+                const start = d(item.start);
+                const end = endDate(item);
+                let laneIndex = 0;
+
+                while (laneIndex < lanes.length && lanes[laneIndex] > start) laneIndex += 1;
+                if (laneIndex === lanes.length) lanes.push(end);
+                else lanes[laneIndex] = end;
+
+                placed.push({ ...item, startDate: start, endDate: end, lane: laneIndex });
+              });
+
+              return placed;
+            }
+
+            function formatRange(item) {
+              return `${item.label}`;
+            }
+
+            function renderAxis() {
+              const axis = document.getElementById("ment-axis");
+              const years = [2021, 2022, 2023, 2024, 2025, 2026];
+
+              years.forEach((year) => {
+                const tick = document.createElement("div");
+                tick.className = "tick";
+                tick.style.left = `${scale(new Date(`${year}-01-01T00:00:00`)) * 100}%`;
+                const label = document.createElement("span");
+                label.textContent = `${year}`;
+                tick.appendChild(label);
+                axis.appendChild(tick);
+              });
+            }
+
+            function renderGroup(groupName, items) {
+              const group = document.createElement("div");
+              group.className = "ment-group";
+
+              const header = document.createElement("div");
+              header.className = "ment-group-title";
+              header.innerHTML = `<h3>${groupName}</h3><div class="sub">overlapping ranges shown as stacked bars</div>`;
+              group.appendChild(header);
+
+              const track = document.createElement("div");
+              track.className = "ment-track";
+
+              const laneHeight = 42;
+              const barHeight = 28;
+              const leftPad = 0;
+              const rightPad = 0;
+
+              const placed = assignLanes(items);
+              const laneCount = Math.max(1, ...placed.map((x) => x.lane + 1));
+              track.style.height = `${laneCount * laneHeight}px`;
+
+              for (let i = 0; i < laneCount; i++) {
+                const lane = document.createElement("div");
+                lane.className = "ment-lane";
+                lane.style.top = `${i * laneHeight}px`;
+                track.appendChild(lane);
+              }
+
+              placed.forEach((item) => {
+                const bar = document.createElement("div");
+                bar.className = `ment-bar ${item.type}`;
+                bar.style.left = `${scale(item.startDate) * 100}%`;
+                bar.style.width = `${Math.max(3, (scale(item.endDate) - scale(item.startDate)) * 100)}%`;
+                bar.style.top = `${item.lane * laneHeight + (laneHeight - barHeight) / 2}px`;
+                bar.title = `${item.label}: ${item.names.join(", ")}`;
+
+                bar.innerHTML = `
+                  <span>${item.names.join(", ")} <span class="small">(${item.label})</span></span>
+                `;
+
+                bar.addEventListener("click", () => {
+                  document.querySelectorAll(".ment-bar.active").forEach((el) => el.classList.remove("active"));
+                  bar.classList.add("active");
+
+                  const detail = document.getElementById("ment-detail");
+                  detail.innerHTML = `
+                    <div class="label">${item.group}</div>
+                    <div style="font-weight:700;margin-bottom:6px;">${item.label}</div>
+                    <div style="margin-bottom:8px;">${item.names.join(", ")}</div>
+                    <div style="color:#6b7280;font-size:0.92rem;">${item.startDate.toLocaleDateString(undefined, { year: "numeric", month: "short" })} – ${item.end ? item.endDate.toLocaleDateString(undefined, { year: "numeric", month: "short" }) : "Current"}</div>
+                  `;
+                });
+
+                track.appendChild(bar);
+              });
+
+              group.appendChild(track);
+              return group;
+            }
+
+            function render() {
+              renderAxis();
+
+              const groupsEl = document.getElementById("ment-groups");
+              const byGroup = {
+                "Undergraduate Students": data.filter((d) => d.group === "Undergraduate Students"),
+                "Master's Students": data.filter((d) => d.group === "Master's Students")
+              };
+
+              groupsEl.appendChild(renderGroup("Undergraduate Students", byGroup["Undergraduate Students"]));
+              groupsEl.appendChild(renderGroup("Master's Students", byGroup["Master's Students"]));
+            }
+
+            render();
+          })();
+        </script>
       </td>
     </tr>
   </tbody>
