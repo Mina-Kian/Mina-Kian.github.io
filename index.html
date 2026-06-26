@@ -140,54 +140,393 @@
               </tbody>
             </table>
 
-            <!-- Research Mentorship -->
+<!-- Research Mentorship -->
 <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;">
   <tbody>
     <tr>
       <td style="padding:16px;width:100%;vertical-align:middle">
         <h2>Research Mentorship</h2>
 
-        <h3 style="margin-bottom:8px;">Undergraduate Students</h3>
-        <div style="
-          display:grid;
-          grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
-          gap:10px;
-          margin-bottom:24px;
-        ">
-          <div style="padding:12px 14px;border:1px solid #e5e7eb;border-radius:12px;background:#fafafa;">
-            <strong>Charlie Wang</strong><br>
-            <span style="color:#6b7280;">Summer 2025 – Current</span>
-          </div>
-          <div style="padding:12px 14px;border:1px solid #e5e7eb;border-radius:12px;background:#fafafa;">
-            <strong>Angela O’Toole</strong><br>
-            <span style="color:#6b7280;">Summer 2025 – Current</span>
-          </div>
-          <div style="padding:12px 14px;border:1px solid #e5e7eb;border-radius:12px;background:#fafafa;">
-            <strong>Stephanie Zhou</strong><br>
-            <span style="color:#6b7280;">Summer 2025 – Current</span>
-          </div>
-          <!-- repeat for the rest -->
-        </div>
+        <style>
+          .mentorship-timeline {
+            position: relative;
+            margin-top: 14px;
+            padding-left: 28px;
+          }
 
-        <h3 style="margin-bottom:8px;">Master's Students</h3>
-        <div style="
-          display:grid;
-          grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
-          gap:10px;
-        ">
-          <div style="padding:12px 14px;border:1px solid #e5e7eb;border-radius:12px;background:#fafafa;">
-            <strong>Anthony Zhang</strong><br>
-            <span style="color:#6b7280;">Summer 2025 – Current</span>
+          .mentorship-timeline::before {
+            content: "";
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #e5e7eb;
+          }
+
+          .mentorship-item {
+            position: relative;
+            margin: 0 0 18px 0;
+          }
+
+          .mentorship-dot {
+            position: absolute;
+            left: -3px;
+            top: 16px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #111827;
+            border: 4px solid #ffffff;
+            box-shadow: 0 0 0 1px #e5e7eb;
+          }
+
+          .mentorship-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 14px;
+            background: #fafafa;
+            padding: 14px 16px;
+          }
+
+          .mentorship-period {
+            font-weight: 700;
+            font-size: 1.02rem;
+            margin-bottom: 10px;
+          }
+
+          .mentorship-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 12px 18px;
+          }
+
+          .mentorship-role {
+            font-weight: 600;
+            margin-bottom: 4px;
+          }
+
+          .mentorship-names {
+            color: #374151;
+            line-height: 1.55;
+          }
+
+          .mentorship-names span {
+            white-space: nowrap;
+          }
+
+          @media (max-width: 700px) {
+            .mentorship-timeline {
+              padding-left: 24px;
+            }
+
+            .mentorship-dot {
+              left: -5px;
+            }
+          }
+        </style>
+
+        <div class="mentorship-timeline">
+
+          <div class="mentorship-item">
+            <div class="mentorship-dot"></div>
+            <div class="mentorship-card">
+              <div class="mentorship-period">Summer 2025 – Current</div>
+              <div class="mentorship-grid">
+                <div>
+                  <div class="mentorship-role">Undergraduate Students</div>
+                  <div class="mentorship-names">
+                    Charlie Wang<br>
+                    Angela O’Toole<br>
+                    Stephanie Zhou<br>
+                    Kelly Cai<br>
+                    Kevin Hao<br>
+                    Daniel Song
+                  </div>
+                </div>
+                <div>
+                  <div class="mentorship-role">Master's Students</div>
+                  <div class="mentorship-names">
+                    Anthony Zhang<br>
+                    Gaurav Zanpure<br>
+                    Meiying Li<br>
+                    Riley Fang
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div style="padding:12px 14px;border:1px solid #e5e7eb;border-radius:12px;background:#fafafa;">
-            <strong>Gaurav Zanpure</strong><br>
-            <span style="color:#6b7280;">Summer 2025 – Current</span>
+
+          <div class="mentorship-item">
+            <div class="mentorship-dot"></div>
+            <div class="mentorship-card">
+              <div class="mentorship-period">Fall 2024 – Current</div>
+              <div class="mentorship-grid">
+                <div>
+                  <div class="mentorship-role">Undergraduate Students</div>
+                  <div class="mentorship-names">
+                    Vincent Zhang<br>
+                    Nairi Zeytounzian<br>
+                    Mingyu Huang<br>
+                    Justin Yang<br>
+                    Henry Chen<br>
+                    Zoe Zang
+                  </div>
+                </div>
+                <div>
+                  <div class="mentorship-role">Master's Students</div>
+                  <div class="mentorship-names">
+                    Jiong Wang
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div style="padding:12px 14px;border:1px solid #e5e7eb;border-radius:12px;background:#fafafa;">
-            <strong>Meiying Li</strong><br>
-            <span style="color:#6b7280;">Summer 2025 – Current</span>
+
+          <div class="mentorship-item">
+            <div class="mentorship-dot"></div>
+            <div class="mentorship-card">
+              <div class="mentorship-period">Fall 2024 – Spring 2025</div>
+              <div class="mentorship-grid">
+                <div>
+                  <div class="mentorship-role">Undergraduate Students</div>
+                  <div class="mentorship-names">
+                    Fatima Flores<br>
+                    Isabella Assefa<br>
+                    Lexie Zhang<br>
+                    Nicole Yu
+                  </div>
+                </div>
+                <div>
+                  <div class="mentorship-role">Master's Students</div>
+                  <div class="mentorship-names">
+                    Yash Sahitya
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <!-- repeat for the rest -->
+
+          <div class="mentorship-item">
+            <div class="mentorship-dot"></div>
+            <div class="mentorship-card">
+              <div class="mentorship-period">Fall 2024 – Fall 2024</div>
+              <div class="mentorship-grid">
+                <div>
+                  <div class="mentorship-role">Undergraduate Students</div>
+                  <div class="mentorship-names">
+                    Meredith Li<br>
+                    Yirui Song
+                  </div>
+                </div>
+                <div>
+                  <div class="mentorship-role">Master's Students</div>
+                  <div class="mentorship-names">
+                    —
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mentorship-item">
+            <div class="mentorship-dot"></div>
+            <div class="mentorship-card">
+              <div class="mentorship-period">Spring 2025 – Spring 2025</div>
+              <div class="mentorship-grid">
+                <div>
+                  <div class="mentorship-role">Undergraduate Students</div>
+                  <div class="mentorship-names">
+                    —
+                  </div>
+                </div>
+                <div>
+                  <div class="mentorship-role">Master's Students</div>
+                  <div class="mentorship-names">
+                    Sherwin Sathish
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mentorship-item">
+            <div class="mentorship-dot"></div>
+            <div class="mentorship-card">
+              <div class="mentorship-period">Fall 2023 – Spring 2025</div>
+              <div class="mentorship-grid">
+                <div>
+                  <div class="mentorship-role">Undergraduate Students</div>
+                  <div class="mentorship-names">
+                    Ritika Singh
+                  </div>
+                </div>
+                <div>
+                  <div class="mentorship-role">Master's Students</div>
+                  <div class="mentorship-names">
+                    —
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mentorship-item">
+            <div class="mentorship-dot"></div>
+            <div class="mentorship-card">
+              <div class="mentorship-period">Summer 2023 – Spring 2024</div>
+              <div class="mentorship-grid">
+                <div>
+                  <div class="mentorship-role">Undergraduate Students</div>
+                  <div class="mentorship-names">
+                    Jessica Wang<br>
+                    Xiaoyuan Zhu<br>
+                    Jonathan Ong<br>
+                    Aryan Trehan<br>
+                    Gloria Chang
+                  </div>
+                </div>
+                <div>
+                  <div class="mentorship-role">Master's Students</div>
+                  <div class="mentorship-names">
+                    —
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mentorship-item">
+            <div class="mentorship-dot"></div>
+            <div class="mentorship-card">
+              <div class="mentorship-period">Spring 2023 – Fall 2024</div>
+              <div class="mentorship-grid">
+                <div>
+                  <div class="mentorship-role">Undergraduate Students</div>
+                  <div class="mentorship-names">
+                    —
+                  </div>
+                </div>
+                <div>
+                  <div class="mentorship-role">Master's Students</div>
+                  <div class="mentorship-names">
+                    Abhyuday Singh
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mentorship-item">
+            <div class="mentorship-dot"></div>
+            <div class="mentorship-card">
+              <div class="mentorship-period">Spring 2023 – Spring 2024</div>
+              <div class="mentorship-grid">
+                <div>
+                  <div class="mentorship-role">Undergraduate Students</div>
+                  <div class="mentorship-names">
+                    Autumn Zaretsky<br>
+                    Parini Gandhi<br>
+                    Wallace Browning<br>
+                    Misha Arif Faruki
+                  </div>
+                </div>
+                <div>
+                  <div class="mentorship-role">Master's Students</div>
+                  <div class="mentorship-names">
+                    —
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mentorship-item">
+            <div class="mentorship-dot"></div>
+            <div class="mentorship-card">
+              <div class="mentorship-period">Spring 2023 – Spring 2023</div>
+              <div class="mentorship-grid">
+                <div>
+                  <div class="mentorship-role">Undergraduate Students</div>
+                  <div class="mentorship-names">
+                    Andrew Park<br>
+                    Zain Merchant<br>
+                    Diego Arceo-Peregrino
+                  </div>
+                </div>
+                <div>
+                  <div class="mentorship-role">Master's Students</div>
+                  <div class="mentorship-names">
+                    —
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mentorship-item">
+            <div class="mentorship-dot"></div>
+            <div class="mentorship-card">
+              <div class="mentorship-period">Fall 2022 – Spring 2023</div>
+              <div class="mentorship-grid">
+                <div>
+                  <div class="mentorship-role">Undergraduate Students</div>
+                  <div class="mentorship-names">
+                    Lin She Spring<br>
+                    Shriya Upadhyay
+                  </div>
+                </div>
+                <div>
+                  <div class="mentorship-role">Master's Students</div>
+                  <div class="mentorship-names">
+                    Yang Qian
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mentorship-item">
+            <div class="mentorship-dot"></div>
+            <div class="mentorship-card">
+              <div class="mentorship-period">Fall 2021 – Fall 2023</div>
+              <div class="mentorship-grid">
+                <div>
+                  <div class="mentorship-role">Undergraduate Students</div>
+                  <div class="mentorship-names">
+                    Anika Gupta
+                  </div>
+                </div>
+                <div>
+                  <div class="mentorship-role">Master's Students</div>
+                  <div class="mentorship-names">
+                    —
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mentorship-item">
+            <div class="mentorship-dot"></div>
+            <div class="mentorship-card">
+              <div class="mentorship-period">Fall 2021 – Spring 2024</div>
+              <div class="mentorship-grid">
+                <div>
+                  <div class="mentorship-role">Undergraduate Students</div>
+                  <div class="mentorship-names">
+                    Pau Sang
+                  </div>
+                </div>
+                <div>
+                  <div class="mentorship-role">Master's Students</div>
+                  <div class="mentorship-names">
+                    —
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </td>
     </tr>
