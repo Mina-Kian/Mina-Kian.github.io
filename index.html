@@ -8,6 +8,151 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+    <style>
+      .ment-wrap {
+        margin-top: 12px;
+        border: 1px solid #e5e7eb;
+        border-radius: 16px;
+        background: #fff;
+        padding: 16px;
+        overflow-x: auto;
+      }
+
+      .ment-detail {
+        border: 1px solid #e5e7eb;
+        border-radius: 14px;
+        background: #fafafa;
+        padding: 14px 16px;
+        margin-bottom: 14px;
+        color: #111827;
+      }
+
+      .ment-detail .label {
+        color: #6b7280;
+        font-size: 0.92rem;
+        margin-bottom: 4px;
+      }
+
+      .ment-axis {
+        position: relative;
+        height: 34px;
+        min-width: 1100px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #e5e7eb;
+      }
+
+      .ment-axis .tick {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background: #e5e7eb;
+      }
+
+      .ment-axis .tick span {
+        position: absolute;
+        top: 10px;
+        left: 4px;
+        transform: translateX(-50%);
+        font-size: 0.82rem;
+        color: #6b7280;
+        white-space: nowrap;
+      }
+
+      .ment-group {
+        min-width: 1100px;
+        margin-bottom: 22px;
+      }
+
+      .ment-group-title {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        margin-bottom: 8px;
+      }
+
+      .ment-group-title h3 {
+        margin: 0;
+        font-size: 1.02rem;
+      }
+
+      .ment-group-title .sub {
+        color: #6b7280;
+        font-size: 0.92rem;
+      }
+
+      .ment-track {
+        position: relative;
+        border-left: 2px solid #f3f4f6;
+        margin-left: 8px;
+      }
+
+      .ment-lane {
+        position: relative;
+        height: 42px;
+      }
+
+      .ment-bar {
+        position: absolute;
+        height: 28px;
+        top: 7px;
+        border-radius: 999px;
+        border: 1px solid rgba(17, 24, 39, 0.12);
+        box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+        padding: 0 12px;
+        display: flex;
+        align-items: center;
+        font-size: 0.86rem;
+        line-height: 1;
+        cursor: pointer;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s ease;
+      }
+
+      .ment-bar:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        opacity: 0.98;
+      }
+
+      .ment-bar.active {
+        outline: 2px solid #111827;
+        outline-offset: 2px;
+      }
+
+      .ment-bar.undergrad {
+        background: linear-gradient(90deg, #dbeafe, #eff6ff);
+        color: #1e3a8a;
+      }
+
+      .ment-bar.masters {
+        background: linear-gradient(90deg, #dcfce7, #f0fdf4);
+        color: #14532d;
+      }
+
+      .ment-bar .small {
+        font-size: 0.78rem;
+        opacity: 0.82;
+        margin-left: 8px;
+      }
+
+      .ment-note {
+        color: #6b7280;
+        font-size: 0.9rem;
+        margin-top: 8px;
+      }
+
+      @media (max-width: 720px) {
+        .ment-wrap,
+        .ment-axis,
+        .ment-group {
+          min-width: 980px;
+        }
+      }
+    </style>
   </head>
 
   <body>
@@ -16,73 +161,62 @@
         <tr style="padding:0px">
           <td style="padding:0px">
 
-<!-- Bio + Headshot -->
-<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-  <tbody>
-    <tr style="padding:0px">
+            <!-- Bio + Headshot -->
+            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+              <tbody>
+                <tr style="padding:0px">
+                  <td style="padding:2.5%;width:63%;vertical-align:middle">
+                    <p class="name" style="text-align:center;">
+                      Mina Kian
+                    </p>
 
-      <!-- Left column -->
-      <td style="padding:2.5%;width:63%;vertical-align:middle">
+                    <p>
+                      I am a PhD candidate in the
+                      <a href="https://uscinteractionlab.web.app" target="_blank" rel="noopener noreferrer">
+                        Interaction Lab
+                      </a>
+                      at the University of Southern California, advised by
+                      <a href="https://robotics.usc.edu/~maja/" target="_blank" rel="noopener noreferrer">
+                        Prof. Maja Matarić
+                      </a>.
+                    </p>
 
-        <p class="name" style="text-align:center;">
-          Mina Kian
-        </p>
+                    <p>
+                      My research focuses on evaluating socially assistive robots (SARs) in mental health contexts, primarily for cognitive behavioral therapy homework support. I am also interested in foundation model assessments, evaluating them in vision-based affective tasks and their ability to support mental health dialogue.
+                    </p>
 
-        <p>
-          I am a PhD candidate in the
-          <a href="https://uscinteractionlab.web.app" target="_blank" rel="noopener noreferrer">
-            Interaction Lab
-          </a>
-          at the University of Southern California, advised by
-          <a href="https://robotics.usc.edu/~maja/" target="_blank" rel="noopener noreferrer">
-            Prof. Maja Matarić
-          </a>.
-        </p>
+                    <p style="text-align:center;margin-top:18px;">
+                      <a href="mailto:kian@usc.edu">Email</a>
+                      &nbsp;/&nbsp;
+                      <a href="https://scholar.google.com/citations?user=Llna1-IAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer">
+                        Google Scholar
+                      </a>
+                    </p>
+                  </td>
 
-        <p>
-          My research focuses on evaluating socially assistive robots (SARs)
-          in mental health contexts, primarily for cognitive behavioral therapy
-          homework support. I am also interested in foundation model
-          assessments, evaluating them in vision-based affective tasks and
-          their ability to support mental health dialogue.
-        </p>
+                  <td style="padding:2.5%;width:37%;max-width:37%;text-align:center;vertical-align:middle;">
+                    <a href="images/Mina_headshot.jpeg">
+                      <img
+                        src="images/Mina_headshot.jpeg"
+                        alt="Mina Kian"
+                        class="hoverZoomLink"
+                        style="
+                          width:75%;
+                          max-width:200px;
+                          height:auto;
+                          border-radius:50%;
+                          object-fit:cover;
+                          object-position:center top;
+                          display:block;
+                          margin:auto;
+                        "
+                      >
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
 
-        <p style="text-align:center;margin-top:18px;">
-          <a href="mailto:kian@usc.edu">Email</a>
-          &nbsp;/&nbsp;
-          <a href="https://scholar.google.com/citations?user=Llna1-IAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer">
-            Google Scholar
-          </a>
-        </p>
-
-      </td>
-
-      <!-- Right column -->
-      <td style="padding:2.5%;width:37%;max-width:37%;text-align:center;vertical-align:middle;">
-
-        <a href="images/Mina_headshot.jpeg">
-          <img
-            src="images/Mina_headshot.jpeg"
-            alt="Mina Kian"
-            class="hoverZoomLink"
-            style="
-              width:75%;
-              max-width:200px;
-              height:auto;
-              border-radius:50%;
-              object-fit:cover;
-              object-position:center top;
-              display:block;
-              margin:auto;
-            "
-          >
-        </a>
-
-      </td>
-
-    </tr>
-  </tbody>
-</table>
             <!-- Research -->
             <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
               <tbody>
@@ -140,506 +274,323 @@
               </tbody>
             </table>
 
-           <!-- Teaching & Mentorship -->
-<table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;">
-  <tbody>
-    <tr>
-      <td style="padding:16px;width:100%;vertical-align:middle">
+            <!-- Teaching & Mentorship -->
+            <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;">
+              <tbody>
+                <tr>
+                  <td style="padding:16px;width:100%;vertical-align:middle">
+                    <h2>Teaching & Mentorship</h2>
 
-        <h2>Teaching & Mentorship</h2>
+                    <h3>Teaching</h3>
+                    <p>
+                      <strong>CSCI 697: Seminar in Computer Science Research</strong><br>
+                      <span style="color:#6b7280;">Teaching Assistant • Fall 2025 &amp; Spring 2026</span>
+                    </p>
 
-        <h3>Teaching</h3>
+                    <h3>Research Mentorship</h3>
+                    <div class="ment-wrap">
+                      <div class="ment-detail" id="ment-detail">
+                        <div class="label">Timeline detail</div>
+                        <div>Click any bar to see the full mentee group and dates.</div>
+                      </div>
 
-        <ul>
-          <li>
-            <strong>CSCI 697: Seminar in Computer Science Research</strong><br>
-            <span style="color:#6b7280;">
-              Teaching Assistant • Fall 2025
-            </span>
-          </li>
+                      <div class="ment-axis" id="ment-axis"></div>
+                      <div id="ment-groups"></div>
 
-          <li style="margin-top:10px;">
-            <strong>CSCI 697: Seminar in Computer Science Research</strong><br>
-            <span style="color:#6b7280;">
-              Teaching Assistant • Spring 2026
-            </span>
-          </li>
-        </ul>
+                      <div class="ment-note">
+                        Hover a bar to preview; click to pin details.
+                      </div>
+                    </div>
 
-        <br>
+                    <script>
+                      (function () {
+                        const timelineStart = new Date("2021-07-01T00:00:00");
+                        const timelineEnd = new Date();
 
-        <h3>Research Mentorship</h3>
+                        const data = [
+                          {
+                            group: "Undergraduate Students",
+                            type: "undergrad",
+                            start: "2025-06-01",
+                            end: null,
+                            label: "Summer 2025 – Current",
+                            names: ["Charlie Wang", "Angela O’Toole", "Stephanie Zhou", "Kelly Cai", "Kevin Hao", "Daniel Song"]
+                          },
+                          {
+                            group: "Master's Students",
+                            type: "masters",
+                            start: "2025-06-01",
+                            end: null,
+                            label: "Summer 2025 – Current",
+                            names: ["Anthony Zhang", "Gaurav Zanpure", "Meiying Li", "Riley Fang"]
+                          },
+                          {
+                            group: "Undergraduate Students",
+                            type: "undergrad",
+                            start: "2024-09-01",
+                            end: null,
+                            label: "Fall 2024 – Current",
+                            names: ["Vincent Zhang", "Nairi Zeytounzian", "Mingyu Huang", "Justin Yang", "Henry Chen", "Zoe Zang"]
+                          },
+                          {
+                            group: "Master's Students",
+                            type: "masters",
+                            start: "2024-09-01",
+                            end: null,
+                            label: "Fall 2024 – Current",
+                            names: ["Jiong Wang"]
+                          },
+                          {
+                            group: "Undergraduate Students",
+                            type: "undergrad",
+                            start: "2024-09-01",
+                            end: "2025-05-31",
+                            label: "Fall 2024 – Spring 2025",
+                            names: ["Fatima Flores", "Isabella Assefa", "Lexie Zhang", "Nicole Yu"]
+                          },
+                          {
+                            group: "Master's Students",
+                            type: "masters",
+                            start: "2024-09-01",
+                            end: "2025-05-31",
+                            label: "Fall 2024 – Spring 2025",
+                            names: ["Yash Sahitya"]
+                          },
+                          {
+                            group: "Undergraduate Students",
+                            type: "undergrad",
+                            start: "2024-09-01",
+                            end: "2024-12-15",
+                            label: "Fall 2024 – Fall 2024",
+                            names: ["Meredith Li", "Yirui Song"]
+                          },
+                          {
+                            group: "Master's Students",
+                            type: "masters",
+                            start: "2025-01-01",
+                            end: "2025-05-31",
+                            label: "Spring 2025 – Spring 2025",
+                            names: ["Sherwin Sathish"]
+                          },
+                          {
+                            group: "Undergraduate Students",
+                            type: "undergrad",
+                            start: "2023-09-01",
+                            end: "2025-05-31",
+                            label: "Fall 2023 – Spring 2025",
+                            names: ["Ritika Singh"]
+                          },
+                          {
+                            group: "Undergraduate Students",
+                            type: "undergrad",
+                            start: "2023-06-01",
+                            end: "2024-05-31",
+                            label: "Summer 2023 – Spring 2024",
+                            names: ["Jessica Wang", "Xiaoyuan Zhu", "Jonathan Ong", "Aryan Trehan", "Gloria Chang"]
+                          },
+                          {
+                            group: "Master's Students",
+                            type: "masters",
+                            start: "2023-01-01",
+                            end: "2024-12-15",
+                            label: "Spring 2023 – Fall 2024",
+                            names: ["Abhyuday Singh"]
+                          },
+                          {
+                            group: "Undergraduate Students",
+                            type: "undergrad",
+                            start: "2023-09-01",
+                            end: "2024-05-31",
+                            label: "Fall 2023 – Spring 2024",
+                            names: ["Autumn Zaretsky", "Parini Gandhi"]
+                          },
+                          {
+                            group: "Undergraduate Students",
+                            type: "undergrad",
+                            start: "2022-09-01",
+                            end: "2023-05-31",
+                            label: "Fall 2022 – Spring 2023",
+                            names: ["Lin She Spring"]
+                          },
+                          {
+                            group: "Undergraduate Students",
+                            type: "undergrad",
+                            start: "2023-01-01",
+                            end: "2023-05-31",
+                            label: "Spring 2023 – Spring 2023",
+                            names: ["Andrew Park", "Zain Merchant", "Diego Arceo-Peregrino"]
+                          },
+                          {
+                            group: "Undergraduate Students",
+                            type: "undergrad",
+                            start: "2023-01-01",
+                            end: "2024-05-31",
+                            label: "Spring 2023 – Spring 2024",
+                            names: ["Wallace Browning", "Misha Arif Faruki"]
+                          },
+                          {
+                            group: "Undergraduate Students",
+                            type: "undergrad",
+                            start: "2022-09-01",
+                            end: null,
+                            label: "Fall 2022 – Current",
+                            names: ["Shriya Upadhyay"]
+                          },
+                          {
+                            group: "Master's Students",
+                            type: "masters",
+                            start: "2022-09-01",
+                            end: "2023-05-31",
+                            label: "Fall 2022 – Spring 2023",
+                            names: ["Yang Qian"]
+                          },
+                          {
+                            group: "Undergraduate Students",
+                            type: "undergrad",
+                            start: "2021-09-01",
+                            end: "2023-12-31",
+                            label: "Fall 2021 – Fall 2023",
+                            names: ["Anika Gupta"]
+                          },
+                          {
+                            group: "Undergraduate Students",
+                            type: "undergrad",
+                            start: "2021-09-01",
+                            end: "2024-05-31",
+                            label: "Fall 2021 – Spring 2024",
+                            names: ["Pau Sang"]
+                          }
+                        ];
 
-        <!-- timeline goes here -->
+                        function d(s) {
+                          return new Date(s);
+                        }
 
-      </td>
-    </tr>
-  </tbody>
-</table>
+                        function endDate(item) {
+                          return item.end ? d(item.end) : timelineEnd;
+                        }
 
-<!-- Research Mentorship -->
-<table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;">
-  <tbody>
-    <tr>
-      <td style="padding:16px;width:100%;vertical-align:middle">
-        <h2>Research Mentorship</h2>
+                        function scale(date) {
+                          const x = (date - timelineStart) / (timelineEnd - timelineStart);
+                          return Math.max(0, Math.min(1, x));
+                        }
 
-        <style>
-          .ment-wrap {
-            margin-top: 12px;
-            border: 1px solid #e5e7eb;
-            border-radius: 16px;
-            background: #fff;
-            padding: 16px;
-            overflow-x: auto;
-          }
+                        function assignLanes(items) {
+                          const sorted = [...items].sort((a, b) => d(a.start) - d(b.start));
+                          const lanes = [];
+                          const placed = [];
 
-          .ment-detail {
-            border: 1px solid #e5e7eb;
-            border-radius: 14px;
-            background: #fafafa;
-            padding: 14px 16px;
-            margin-bottom: 14px;
-            color: #111827;
-          }
+                          sorted.forEach((item) => {
+                            const start = d(item.start);
+                            const end = endDate(item);
+                            let laneIndex = 0;
 
-          .ment-detail .label {
-            color: #6b7280;
-            font-size: 0.92rem;
-            margin-bottom: 4px;
-          }
+                            while (laneIndex < lanes.length && lanes[laneIndex] > start) laneIndex += 1;
+                            if (laneIndex === lanes.length) lanes.push(end);
+                            else lanes[laneIndex] = end;
 
-          .ment-axis {
-            position: relative;
-            height: 34px;
-            min-width: 1100px;
-            margin-bottom: 10px;
-            border-bottom: 1px solid #e5e7eb;
-          }
+                            placed.push({ ...item, startDate: start, endDate: end, lane: laneIndex });
+                          });
 
-          .ment-axis .tick {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 1px;
-            background: #e5e7eb;
-          }
+                          return placed;
+                        }
 
-          .ment-axis .tick span {
-            position: absolute;
-            top: 10px;
-            left: 4px;
-            transform: translateX(-50%);
-            font-size: 0.82rem;
-            color: #6b7280;
-            white-space: nowrap;
-          }
+                        function renderAxis() {
+                          const axis = document.getElementById("ment-axis");
+                          const years = [2021, 2022, 2023, 2024, 2025, 2026];
 
-          .ment-group {
-            min-width: 1100px;
-            margin-bottom: 22px;
-          }
+                          years.forEach((year) => {
+                            const tick = document.createElement("div");
+                            tick.className = "tick";
+                            tick.style.left = `${scale(new Date(`${year}-01-01T00:00:00`)) * 100}%`;
+                            const label = document.createElement("span");
+                            label.textContent = `${year}`;
+                            tick.appendChild(label);
+                            axis.appendChild(tick);
+                          });
+                        }
 
-          .ment-group-title {
-            display: flex;
-            align-items: baseline;
-            gap: 10px;
-            margin-bottom: 8px;
-          }
+                        function renderGroup(groupName, items) {
+                          const group = document.createElement("div");
+                          group.className = "ment-group";
 
-          .ment-group-title h3 {
-            margin: 0;
-            font-size: 1.02rem;
-          }
+                          const header = document.createElement("div");
+                          header.className = "ment-group-title";
+                          header.innerHTML = `<h3>${groupName}</h3><div class="sub">overlapping ranges shown as stacked bars</div>`;
+                          group.appendChild(header);
 
-          .ment-group-title .sub {
-            color: #6b7280;
-            font-size: 0.92rem;
-          }
+                          const track = document.createElement("div");
+                          track.className = "ment-track";
 
-          .ment-track {
-            position: relative;
-            border-left: 2px solid #f3f4f6;
-            margin-left: 8px;
-          }
+                          const laneHeight = 42;
+                          const barHeight = 28;
+                          const placed = assignLanes(items);
+                          const laneCount = Math.max(1, ...placed.map((x) => x.lane + 1));
+                          track.style.height = `${laneCount * laneHeight}px`;
 
-          .ment-lane {
-            position: relative;
-            height: 42px;
-          }
+                          for (let i = 0; i < laneCount; i++) {
+                            const lane = document.createElement("div");
+                            lane.className = "ment-lane";
+                            lane.style.top = `${i * laneHeight}px`;
+                            track.appendChild(lane);
+                          }
 
-          .ment-bar {
-            position: absolute;
-            height: 28px;
-            top: 7px;
-            border-radius: 999px;
-            border: 1px solid rgba(17, 24, 39, 0.12);
-            box-shadow: 0 1px 2px rgba(0,0,0,0.04);
-            padding: 0 12px;
-            display: flex;
-            align-items: center;
-            font-size: 0.86rem;
-            line-height: 1;
-            cursor: pointer;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s ease;
-          }
+                          placed.forEach((item) => {
+                            const bar = document.createElement("div");
+                            bar.className = `ment-bar ${item.type}`;
+                            bar.style.left = `${scale(item.startDate) * 100}%`;
+                            bar.style.width = `${Math.max(3, (scale(item.endDate) - scale(item.startDate)) * 100)}%`;
+                            bar.style.top = `${item.lane * laneHeight + (laneHeight - barHeight) / 2}px`;
+                            bar.title = `${item.label}: ${item.names.join(", ")}`;
 
-          .ment-bar:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            opacity: 0.98;
-          }
+                            bar.innerHTML = `
+                              <span>${item.names.join(", ")} <span class="small">(${item.label})</span></span>
+                            `;
 
-          .ment-bar.active {
-            outline: 2px solid #111827;
-            outline-offset: 2px;
-          }
+                            bar.addEventListener("click", () => {
+                              document.querySelectorAll(".ment-bar.active").forEach((el) => el.classList.remove("active"));
+                              bar.classList.add("active");
 
-          .ment-bar.undergrad {
-            background: linear-gradient(90deg, #dbeafe, #eff6ff);
-            color: #1e3a8a;
-          }
+                              const detail = document.getElementById("ment-detail");
+                              detail.innerHTML = `
+                                <div class="label">${item.group}</div>
+                                <div style="font-weight:700;margin-bottom:6px;">${item.label}</div>
+                                <div style="margin-bottom:8px;">${item.names.join(", ")}</div>
+                                <div style="color:#6b7280;font-size:0.92rem;">
+                                  ${item.startDate.toLocaleDateString(undefined, { year: "numeric", month: "short" })}
+                                  –
+                                  ${item.end ? item.endDate.toLocaleDateString(undefined, { year: "numeric", month: "short" }) : "Current"}
+                                </div>
+                              `;
+                            });
 
-          .ment-bar.masters {
-            background: linear-gradient(90deg, #dcfce7, #f0fdf4);
-            color: #14532d;
-          }
+                            track.appendChild(bar);
+                          });
 
-          .ment-bar .small {
-            font-size: 0.78rem;
-            opacity: 0.82;
-            margin-left: 8px;
-          }
+                          group.appendChild(track);
+                          return group;
+                        }
 
-          .ment-note {
-            color: #6b7280;
-            font-size: 0.9rem;
-            margin-top: 8px;
-          }
+                        function render() {
+                          renderAxis();
 
-          @media (max-width: 720px) {
-            .ment-wrap,
-            .ment-axis,
-            .ment-group {
-              min-width: 980px;
-            }
-          }
-        </style>
+                          const groupsEl = document.getElementById("ment-groups");
+                          const byGroup = {
+                            "Undergraduate Students": data.filter((d) => d.group === "Undergraduate Students"),
+                            "Master's Students": data.filter((d) => d.group === "Master's Students")
+                          };
 
-        <div class="ment-wrap">
-          <div class="ment-detail" id="ment-detail">
-            <div class="label">Timeline detail</div>
-            <div>Click any bar to see the full mentee group and dates.</div>
-          </div>
+                          groupsEl.appendChild(renderGroup("Undergraduate Students", byGroup["Undergraduate Students"]));
+                          groupsEl.appendChild(renderGroup("Master's Students", byGroup["Master's Students"]));
+                        }
 
-          <div class="ment-axis" id="ment-axis"></div>
-          <div id="ment-groups"></div>
-
-          <div class="ment-note">
-            Hover a bar to preview; click to pin details.
-          </div>
-        </div>
-
-        <script>
-          (function () {
-            const timelineStart = new Date("2021-07-01T00:00:00");
-            const timelineEnd = new Date(); // current date
-
-            const data = [
-              {
-                group: "Undergraduate Students",
-                type: "undergrad",
-                start: "2025-06-01",
-                end: null,
-                label: "Summer 2025 – Current",
-                names: ["Charlie Wang", "Angela O’Toole", "Stephanie Zhou", "Kelly Cai", "Kevin Hao", "Daniel Song"]
-              },
-              {
-                group: "Master's Students",
-                type: "masters",
-                start: "2025-06-01",
-                end: null,
-                label: "Summer 2025 – Current",
-                names: ["Anthony Zhang", "Gaurav Zanpure", "Meiying Li", "Riley Fang"]
-              },
-              {
-                group: "Undergraduate Students",
-                type: "undergrad",
-                start: "2024-09-01",
-                end: null,
-                label: "Fall 2024 – Current",
-                names: ["Vincent Zhang", "Nairi Zeytounzian", "Mingyu Huang", "Justin Yang", "Henry Chen", "Zoe Zang"]
-              },
-              {
-                group: "Master's Students",
-                type: "masters",
-                start: "2024-09-01",
-                end: null,
-                label: "Fall 2024 – Current",
-                names: ["Jiong Wang"]
-              },
-              {
-                group: "Undergraduate Students",
-                type: "undergrad",
-                start: "2024-09-01",
-                end: "2025-05-31",
-                label: "Fall 2024 – Spring 2025",
-                names: ["Fatima Flores", "Isabella Assefa", "Lexie Zhang", "Nicole Yu"]
-              },
-              {
-                group: "Master's Students",
-                type: "masters",
-                start: "2024-09-01",
-                end: "2025-05-31",
-                label: "Fall 2024 – Spring 2025",
-                names: ["Yash Sahitya"]
-              },
-              {
-                group: "Undergraduate Students",
-                type: "undergrad",
-                start: "2024-09-01",
-                end: "2024-12-15",
-                label: "Fall 2024 – Fall 2024",
-                names: ["Meredith Li", "Yirui Song"]
-              },
-              {
-                group: "Master's Students",
-                type: "masters",
-                start: "2025-01-01",
-                end: "2025-05-31",
-                label: "Spring 2025 – Spring 2025",
-                names: ["Sherwin Sathish"]
-              },
-              {
-                group: "Undergraduate Students",
-                type: "undergrad",
-                start: "2023-09-01",
-                end: "2025-05-31",
-                label: "Fall 2023 – Spring 2025",
-                names: ["Ritika Singh"]
-              },
-              {
-                group: "Undergraduate Students",
-                type: "undergrad",
-                start: "2023-06-01",
-                end: "2024-05-31",
-                label: "Summer 2023 – Spring 2024",
-                names: ["Jessica Wang", "Xiaoyuan Zhu", "Jonathan Ong", "Aryan Trehan", "Gloria Chang"]
-              },
-              {
-                group: "Master's Students",
-                type: "masters",
-                start: "2023-01-01",
-                end: "2024-12-15",
-                label: "Spring 2023 – Fall 2024",
-                names: ["Abhyuday Singh"]
-              },
-              {
-                group: "Undergraduate Students",
-                type: "undergrad",
-                start: "2023-09-01",
-                end: "2024-05-31",
-                label: "Fall 2023 – Spring 2024",
-                names: ["Autumn Zaretsky", "Parini Gandhi"]
-              },
-              {
-                group: "Undergraduate Students",
-                type: "undergrad",
-                start: "2022-09-01",
-                end: "2023-05-31",
-                label: "Fall 2022 – Spring 2023",
-                names: ["Lin She Spring"]
-              },
-              {
-                group: "Undergraduate Students",
-                type: "undergrad",
-                start: "2023-01-01",
-                end: "2023-05-31",
-                label: "Spring 2023 – Spring 2023",
-                names: ["Andrew Park", "Zain Merchant", "Diego Arceo-Peregrino"]
-              },
-              {
-                group: "Undergraduate Students",
-                type: "undergrad",
-                start: "2023-01-01",
-                end: "2024-05-31",
-                label: "Spring 2023 – Spring 2024",
-                names: ["Wallace Browning", "Misha Arif Faruki"]
-              },
-              {
-                group: "Undergraduate Students",
-                type: "undergrad",
-                start: "2022-09-01",
-                end: null,
-                label: "Fall 2022 – Current",
-                names: ["Shriya Upadhyay"]
-              },
-              {
-                group: "Master's Students",
-                type: "masters",
-                start: "2022-09-01",
-                end: "2023-05-31",
-                label: "Fall 2022 – Spring 2023",
-                names: ["Yang Qian"]
-              },
-              {
-                group: "Undergraduate Students",
-                type: "undergrad",
-                start: "2021-09-01",
-                end: "2023-12-31",
-                label: "Fall 2021 – Fall 2023",
-                names: ["Anika Gupta"]
-              },
-              {
-                group: "Undergraduate Students",
-                type: "undergrad",
-                start: "2021-09-01",
-                end: "2024-05-31",
-                label: "Fall 2021 – Spring 2024",
-                names: ["Pau Sang"]
-              }
-            ];
-
-            const colors = {
-              undergrad: { fill: "#dbeafe", text: "#1e3a8a" },
-              masters: { fill: "#dcfce7", text: "#14532d" }
-            };
-
-            function d(s) {
-              return new Date(s);
-            }
-
-            function endDate(item) {
-              return item.end ? d(item.end) : timelineEnd;
-            }
-
-            function scale(date) {
-              const x = (date - timelineStart) / (timelineEnd - timelineStart);
-              return Math.max(0, Math.min(1, x));
-            }
-
-            function assignLanes(items) {
-              const sorted = [...items].sort((a, b) => d(a.start) - d(b.start));
-              const lanes = [];
-              const placed = [];
-
-              sorted.forEach((item) => {
-                const start = d(item.start);
-                const end = endDate(item);
-                let laneIndex = 0;
-
-                while (laneIndex < lanes.length && lanes[laneIndex] > start) laneIndex += 1;
-                if (laneIndex === lanes.length) lanes.push(end);
-                else lanes[laneIndex] = end;
-
-                placed.push({ ...item, startDate: start, endDate: end, lane: laneIndex });
-              });
-
-              return placed;
-            }
-
-            function formatRange(item) {
-              return `${item.label}`;
-            }
-
-            function renderAxis() {
-              const axis = document.getElementById("ment-axis");
-              const years = [2021, 2022, 2023, 2024, 2025, 2026];
-
-              years.forEach((year) => {
-                const tick = document.createElement("div");
-                tick.className = "tick";
-                tick.style.left = `${scale(new Date(`${year}-01-01T00:00:00`)) * 100}%`;
-                const label = document.createElement("span");
-                label.textContent = `${year}`;
-                tick.appendChild(label);
-                axis.appendChild(tick);
-              });
-            }
-
-            function renderGroup(groupName, items) {
-              const group = document.createElement("div");
-              group.className = "ment-group";
-
-              const header = document.createElement("div");
-              header.className = "ment-group-title";
-              header.innerHTML = `<h3>${groupName}</h3><div class="sub">overlapping ranges shown as stacked bars</div>`;
-              group.appendChild(header);
-
-              const track = document.createElement("div");
-              track.className = "ment-track";
-
-              const laneHeight = 42;
-              const barHeight = 28;
-              const leftPad = 0;
-              const rightPad = 0;
-
-              const placed = assignLanes(items);
-              const laneCount = Math.max(1, ...placed.map((x) => x.lane + 1));
-              track.style.height = `${laneCount * laneHeight}px`;
-
-              for (let i = 0; i < laneCount; i++) {
-                const lane = document.createElement("div");
-                lane.className = "ment-lane";
-                lane.style.top = `${i * laneHeight}px`;
-                track.appendChild(lane);
-              }
-
-              placed.forEach((item) => {
-                const bar = document.createElement("div");
-                bar.className = `ment-bar ${item.type}`;
-                bar.style.left = `${scale(item.startDate) * 100}%`;
-                bar.style.width = `${Math.max(3, (scale(item.endDate) - scale(item.startDate)) * 100)}%`;
-                bar.style.top = `${item.lane * laneHeight + (laneHeight - barHeight) / 2}px`;
-                bar.title = `${item.label}: ${item.names.join(", ")}`;
-
-                bar.innerHTML = `
-                  <span>${item.names.join(", ")} <span class="small">(${item.label})</span></span>
-                `;
-
-                bar.addEventListener("click", () => {
-                  document.querySelectorAll(".ment-bar.active").forEach((el) => el.classList.remove("active"));
-                  bar.classList.add("active");
-
-                  const detail = document.getElementById("ment-detail");
-                  detail.innerHTML = `
-                    <div class="label">${item.group}</div>
-                    <div style="font-weight:700;margin-bottom:6px;">${item.label}</div>
-                    <div style="margin-bottom:8px;">${item.names.join(", ")}</div>
-                    <div style="color:#6b7280;font-size:0.92rem;">${item.startDate.toLocaleDateString(undefined, { year: "numeric", month: "short" })} – ${item.end ? item.endDate.toLocaleDateString(undefined, { year: "numeric", month: "short" }) : "Current"}</div>
-                  `;
-                });
-
-                track.appendChild(bar);
-              });
-
-              group.appendChild(track);
-              return group;
-            }
-
-            function render() {
-              renderAxis();
-
-              const groupsEl = document.getElementById("ment-groups");
-              const byGroup = {
-                "Undergraduate Students": data.filter((d) => d.group === "Undergraduate Students"),
-                "Master's Students": data.filter((d) => d.group === "Master's Students")
-              };
-
-              groupsEl.appendChild(renderGroup("Undergraduate Students", byGroup["Undergraduate Students"]));
-              groupsEl.appendChild(renderGroup("Master's Students", byGroup["Master's Students"]));
-            }
-
-            render();
-          })();
-        </script>
-      </td>
-    </tr>
-  </tbody>
-</table>
+                        render();
+                      })();
+                    </script>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
 
           </td>
         </tr>
